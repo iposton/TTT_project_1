@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///Users/ianposton/Desktop/wdi/tic_tac_toe/index.html -->
+<html ng-app="tttApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+		<meta charset="utf-8">
+
+<!-- Make the board change and say Ding, Dang, Dong Merry Christmas -->
+
+		<title>Tic, Tac, Toe</title>
+
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" href="file:///Users/ianposton/Desktop/wdi/tic_tac_toe/css/normalize.css">
+		<link rel="stylesheet" href="file:///Users/ianposton/Desktop/wdi/tic_tac_toe/css/style.css">
+		
+		<script src="./Tic, Tac, Toe_files/angular.js"></script>
+		<script src="./Tic, Tac, Toe_files/app.js"></script>
+		<script src="./Tic, Tac, Toe_files/gameboard.js"></script>
+		<script src="./Tic, Tac, Toe_files/tttController.js"></script>
+		
+	</head>
+
+	<body ng-controller="TicTacToeController as game" class="ng-scope ng-binding">
+
+Tic, Tac, Toe -
+number of tiles: 3
+<h1 class="ng-binding">[0,1,2]</h1>
+<section id="active-board">
+
+	<div class="game-board">
+
+	<h1>Tic, Tac, Toe</h1>
+	<p>
+	<button>Play!</button>
+	</p>
+
+		
+		<!-- ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope unselected-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope selected-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope red-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index -->
+
+		
+
+		<!-- ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope unselected-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope selected-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope red-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index -->
+
+		<!-- ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope unselected-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope selected-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index --><div class="board-tile ng-scope red-tile" ng-repeat="tile in game.activeBoard.tiles track by $index" ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+
+			<!-- {{ $index }} -->
+			
+
+		</div><!-- end ngRepeat: tile in game.activeBoard.tiles track by $index -->
+	
+
+	</div>
+
+	
+	
+
+
+</section>
+
+	
+
+</body></html>

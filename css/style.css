@@ -1,0 +1,50 @@
+#active-board {
+
+	text-align: center;
+	margin-top: 10px;
+}
+
+#active-board button {
+
+	margin-top: 10px;
+}
+
+
+.board-tile {
+
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	border: 10px solid #34495e;
+	margin: 0 5px;
+}
+
+.board-tile.selected-tile {
+
+	/*background: #9b59b6;*/
+	background-image:url("../images/o.png");
+}
+
+/*look for two classes in the same element if there is a space then it looks for decendent*/
+.board-tile.unselected-tile {
+
+	background: white;
+	
+}
+
+.board-tile.red-tile{
+
+	/*background: #16a085;*/
+	background-image:url("../images/x.png");
+}
+
+.game-board {
+
+
+
+width: 500px;
+height: 600px;
+margin: 0 auto;
+
+
+}
