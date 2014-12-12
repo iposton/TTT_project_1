@@ -1,11 +1,11 @@
-angular.module('tttApp').factory('TicTacToeFactory', TicTacToeFactoryFunc);
+angular.module('tttApp').controller('TicTacToeFactory', TicTacToeFactoryFunc);
 
 TicTacToeFactoryFunc.$inject = ['$firebase'];
 
-   function TicTacToeFactoryFunc() {
+   function TicTacToeFactoryFunc($firebase) {
 
 
-   	var TicTacToeFactory = function($firebase) {
+  
 
 // properties of firebase lobby controller stuff
 	var self = this;
@@ -13,6 +13,11 @@ TicTacToeFactoryFunc.$inject = ['$firebase'];
 	self.playerNumber = -1;
 
 	self.room = getLobby();
+
+	
+	console.log( 13, self.room.numPlayers);
+
+console.log(15, "AFTER numPlayers, BEFORE $loaded");
 
 	//run the function only when data is loaded
 	self.room.$loaded(function(){
@@ -49,7 +54,7 @@ function initialize() {
 
 		name: "Lobby Game",
 		numPlayers: 5,
-		coolnessFactor: 100,
+		coolnessFactor: 80,
 		wont_be_added: 10
 	});
 
@@ -62,7 +67,7 @@ function initialize() {
 		var lobby = $firebase(ref).$asObject();
 		return lobby;
 	}
-}
 
- return TicTacToeFactory;
+
+ // return TicTacToeFactory;
   }

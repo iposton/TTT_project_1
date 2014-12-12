@@ -21,29 +21,36 @@
 	
 		<script src="js/app.js"></script>
 		<script src="js/gameboard.js"></script>
-		<script src="js/fireFactory.js"></script>
+		<script src="js/Player.js"></script>
+		
 		<script src="js/tttController.js"></script>
 		
 	</head>
 
-	<body ng-controller="TicTacToeController as game" >
+	<body>
+
+		<!-- <section id="lobby" ng-controller="TicTacToeFactory as fire">
+
+		 <button ng-click="fire.room.playerTurn = (fire.room.playerTurn + 1) % 2; fire.room.$save();" ng-show="fire.playerNumber === fire.room.playerTurn"  ng-class="fire.room.getLobby($index)">Players Turn</button>
+            {{ fire.room.name }}
+
+              player number: {{ fire.room.playerNumber}}
+
+       Number of Players:  {{ fire.room.numPlayers }}
+
+       </section> -->
 <!-- 
 {{game.gameName}} -
 number of tiles: {{ game.activeBoard.numTiles }} -->
 
 <!-- <h1>{{ game.activeBoard.tiles }}</h1> -->
-<section id="active-board">
+<section id="active-board" ng-controller="TicTacToeController as game">
 
 	<div class="game-board">
 
 		   
 <!-- ng-hide or ng-show to click for players turn -->
-       <button ng-click="game.room.playerTurn = (game.room.playerTurn + 1) % 2; game.room.$save();" ng-show="game.playerNumber === game.room.playerTurn">Players Turn</button>
-            {{ game.room.name }}
-
-              player number: {{ game.playerNumber}}
-
-       Number of Players:  {{ game.room.numPlayers }}
+      
 
             <span> Score: </span><span> Player X: 0 </span> <span> Player O: 0 </span>
 

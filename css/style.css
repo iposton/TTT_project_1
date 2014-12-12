@@ -29,7 +29,7 @@ body {
 	border-radius: 10px;
 }
 
-.board-tile.selected-tile {
+.board-tile.player_X {
 
 	/*background: #9b59b6;*/
 	background-image:url("../images/o.png");
@@ -42,7 +42,7 @@ body {
 	
 }
 
-.board-tile.red-tile{
+.board-tile.player_O{
 
 	/*background: #16a085;*/
 	background-image:url("../images/x.png");
@@ -60,4 +60,10 @@ margin: 0 auto;
    background-color: rgba(0,0,0,.3);
 
 
+}
+
+#lobby {
+
+	width: 400px;
+	height: 40px;
 }

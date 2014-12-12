@@ -1,21 +1,22 @@
 angular.module('tttApp').controller('TicTacToeController', TicTacToeFunc);
 
 
+TicTacToeFunc.$inject = ['GameBoardFactory', '$firebase', 'PlayerFactory'];
 
 //this is a thin controller 
 
 // connect the factory to the controller by $inject 
-TicTacToeFunc.$inject = ['GameBoard'];
 
 
 
 
-function TicTacToeFunc(GameBoard) {
+
+function TicTacToeFunc(GameBoardFactory) {
 
 
 	// this.gameName ="Tic, Tac, Toe";
 
-	this.activeBoard = new GameBoard ( 9 );
+	this.activeBoard = new GameBoardFactory ( 9 );
 	
 
 }
