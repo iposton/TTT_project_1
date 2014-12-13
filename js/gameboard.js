@@ -44,6 +44,8 @@ function GameBoardFactory($firebase){
 
 		 self.getTileState = getTileState;
 
+		 // self.owin = owin;
+
 	
 
 			      
@@ -77,26 +79,44 @@ function GameBoardFactory($firebase){
 				 function winningCombos() {  
 				 	console.log("winning"); 
 
-				 	if(self.gameboard == 1 && self.gameboard == 1) //|| (self.gameboard 1] == self.gameboard[1] ) // ||
+				  	if((self.gameboard[0] === 2 && self.gameboard[1] === 2 && self.gameboard[2]) ||
+				  	  (self.gameboard[3] === 2 && self.gameboard[4] === 2 && self.gameboard[5]) ||
+				  	(self.gameboard[6] === 2 && self.gameboard[7] === 2 && self.gameboard[8]) ||
+				  	(self.gameboard[0] === 2 && self.gameboard[3] === 2 && self.gameboard[6]) ||
+				  	(self.gameboard[1] === 2 && self.gameboard[4] === 2 && self.gameboard[7]) ||
+				  	(self.gameboard[2] === 2 && self.gameboard[5] === 2 && self.gameboard[8]) ||
+				  	(self.gameboard[0] === 2 && self.gameboard[4] === 2 && self.gameboard[8]) ||
+				  	(self.gameboard[2] === 2 && self.gameboard[4] === 2 && self.gameboard[6])) {
 
-					  // self.gameboard[3] == self.gameboard[4] && self.gameboard[4] == self.gameboard[5] ||
+				  		alert("Player X you won!");
 
-				   //    self.gameboard[6] == self.gameboard[7] && self.gameboard[7] == self.gameboard[8] || 
+				  	} else if ((self.gameboard[0] === 1 && self.gameboard[1] === 1 && self.gameboard[2]) ||
+				  	  (self.gameboard[3] === 1 && self.gameboard[4] === 1 && self.gameboard[5]) ||
+				  	(self.gameboard[6] === 1 && self.gameboard[7] === 1 && self.gameboard[8]) ||
+				  	(self.gameboard[0] === 1 && self.gameboard[3] === 1 && self.gameboard[6]) ||
+				  	(self.gameboard[1] === 1 && self.gameboard[4] === 1 && self.gameboard[7]) ||
+				  	(self.gameboard[2] === 1 && self.gameboard[5] === 1 && self.gameboard[8]) ||
+				  	(self.gameboard[0] === 1 && self.gameboard[4] === 1 && self.gameboard[8]) ||
+				  	(self.gameboard[2] === 1 && self.gameboard[4] === 1 && self.gameboard[6])) {
 
-				   //    self.gameboard[0] == self.gameboard[3] && self.gameboard[3] == self.gameboard[6]|| 
+				  		alert("Player O you won!");
 
-				   //    self.gameboard[1] == self.gameboard[4] && self.gameboard[4] == self.gameboard[7] || 
+				  	}
 
-				   //    self.gameboard[2] == self.gameboard[5] && self.gameboard[5] == self.gameboard[8] ||
 
-				   //    self.gameboard[0] == self.gameboard[4] && self.gameboard[4] == self.gameboard[8] || 
 
-				   //    self.gameboard[2] == self.gameboard[4] && self.gameboard[4] == self.gameboard[6]) }
+				//   		self.gameboard == 9) { 
 
-				 	{	owin();
-				 	} else if(self.gameboard == 9) { self.firstTurn(); } 
 
-				 }
+				//   		self.firstTurn();
+
+				  	 
+
+				 		
+				// else if(self.gameboard == 9) { self.firstTurn(); } 
+
+				 // }
+				  	}
 
 		 	// else (self.firstTurn += 1)  }
 
