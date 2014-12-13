@@ -1,0 +1,156 @@
+	// New_state = [0];
+		
+       
+		// console.log("inside controller");
+			        
+
+		// function GameBoardFunc(){
+
+
+		//      var sync = new Firebase("https://playercount.firebaseio.com/gameboard");
+		//      var tiles = $firebase(sync).$asObject();
+		//      // this.tiles = tiles;
+		//      var sync_turn = new Firebase("https://playercount.firebaseio.com/turns");
+		//      var player = $firebase(sync_turn).$asObject();
+		//      this.tiles = tiles;
+		//      this.player = player;
+		//      player.turns = 0;
+		//      player.$save();
+
+		//      // for(var i = 0; i < this.numTiles; i++){
+		//      // 	tiles.$add(
+		//      // 		{cell: i}  
+		//      // 	);
+		//      // }
+
+		//      tiles.gameboard = [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+		//      tiles.$save();
+		//      return tiles;
+		// }
+
+  //        tiles.$loaded(function(){
+  //                   toggleTile();
+  //        			function toggleTile(num) {
+
+		// 	//this does this devidied by this and sets it back to zero ng-click
+		// console.log("inside toggleTile");
+
+		// tiles.gameboard[num] = (tiles.gameboard[num] + 1) % TILE_STATES.length;
+
+		// player.turns = 1;
+
+		// console.log(tiles.gameboard);
+
+
+		// 		// pickTile();
+
+			   
+
+
+		// }
+
+  //                    });
+		// 	         console.log(tiles)
+
+			        
+
+			         
+
+			         // var sync = new Firebase("https://playercount.firebaseio.com/board/players");
+			         // var player = $firebase(sync).$asObject();
+
+
+	// this.board_structure.$loaded().then(function)
+	// this.players.$loaded().then(function)
+
+
+	   // tiles.$loaded(function() {
+			 //        	console.log("LOADED! ")
+			 //        	// player.turns++;
+			        	
+			 //        	tiles.$save();
+			 //        })
+
+
+		// function xTurn(tile) {
+			  //   	console.log("inside pick tile")
+
+			    // var sync_turn = new Firebase("https://playercount.firebaseio.com/turns");
+			    //      var player = $firebase(sync_turn).$asObject();
+			    //      this.tiles = tiles;
+			    //      this.player = player;
+			    //      player.turns = 0;
+			    //      player.$save();
+			  //       // var sync = new Firebase("https://playercount.firebaseio.com/gameboard");
+			  //       // var player = $firebase(sync).$asObject();
+
+			  //       // player.turns = 0;
+			        
+			  //       console.log("NOT LOADED " + player.turns);
+
+			  //       player.$loaded(function() {
+			  //       	console.log("LOADED! " + player.turns)
+			  //       	player.turns++;
+			  //       	player.$save();
+			  //       })
+
+			  //           player.turns += 1;
+			  //           player.$save();
+
+			  //           if (tile.owner === "") {
+			  //               if (turns % 2 === 0) {
+			  //                   // tile.player = 1;
+			  //                   tile.owner = "player_X"
+			  //                   self.board.$save();
+			  //                   console.log(tile);
+			  //                   winner();
+			  //               }
+			  //               else {
+			  //                   tile.player = 2;
+			  //                   // tile.owner = "O";
+			  //                   self.board.$save(tile);
+			  //                   console.log(tile);
+			  //                   winner();
+			  //               }
+			  //           }
+			  //           else {
+			  //               window.alert("Pick another!");
+			  //           }
+    	// }
+
+    		// var empty = 0;
+
+		// function checkWin() {
+
+
+		// 	if(this.player.TILE_STATES == GameBoard.TILE_STATES.empty);
+
+		// 	return false;
+		// }
+
+
+		// // winning logic here
+	 // tile.winningCombos = new Array();
+	 // tile.empty = new Array();
+
+		// function winningCombos() { [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
+
+		// 	for( var 1 = 0; 1<= 8; 1++);
+
+		// 		tile.winningCombos[1] = false;
+		// 	    tile.empty[1] = '';
+
+		// 	}
+
+		// 	}
+
+
+
+		// } else catsGame 
+
+
+
+		 // for (var i=0; i<this.tiles.length; i++) {
+			// this.tiles[i] = 0;
+
+		 // }

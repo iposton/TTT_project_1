@@ -21,7 +21,7 @@
 	
 		<script src="js/app.js"></script>
 		<script src="js/gameboard.js"></script>
-		<script src="js/Player.js"></script>
+		
 		
 		<script src="js/tttController.js"></script>
 		
@@ -62,10 +62,11 @@ number of tiles: {{ game.activeBoard.numTiles }} -->
 	</p>
 	<p>Player X Go!</p>
 
-		
-		<div class="board-tile" ng-repeat="tile in game.activeBoard.tiles track by $index " ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
+		<p>{{ game }}</p>
+		<div class="board-tile" ng-repeat="tile in game.activeBoard.gameboard track by $index " ng-click="game.activeBoard.toggleTile($index)" ng-class="game.activeBoard.getTileState($index)">
 
-			<!-- {{ $index }} --> 
+			{{ $index }}  
+
 			
 
 		</div>
