@@ -44,9 +44,13 @@ function GameBoardFactory($firebase){
 
 		 self.getTileState = getTileState;
 
+		 
+
 		 // self.owin = owin;
 
-	
+	     // self.messageFunction = messageFunction;
+
+	     // self.winningCombos = winningCombos;
 
 			      
 
@@ -60,49 +64,88 @@ function GameBoardFactory($firebase){
 
 				if( self.gameboard[num] === 0){
 
-					self.gameboard[num] = (self.gameboard[num] + 1) % TILE_STATES.length;
-					if( self.firstTurn ) {
+					//self.gameboard[num] =  TILE_STATES.length;
+					if( self.firstTurn ) { 
+						console.log("first turn at if :" + self.firstTurn);
+						
+						//  player X
 						self.gameboard[num] = 1;
+						
+						
+
 					}
 					else {
+						console.log("else should be false :" + self.firstTurn);
+						
+
+						// player O
 
 						self.gameboard[num] = 2;
+						
+						
 
 
 				        }
 
 				    self.firstTurn = !self.firstTurn;
-
-				    return winningCombos();  
+				    console.log(self.count);
+                    self.count++;
+				    return winningCombos(); 
+				    // return messageFunction(); 
 				}
 
 				 function winningCombos() {  
-				 	console.log("winning"); 
+				 	 
 
-				  	if((self.gameboard[0] === 2 && self.gameboard[1] === 2 && self.gameboard[2]) ||
-				  	  (self.gameboard[3] === 2 && self.gameboard[4] === 2 && self.gameboard[5]) ||
-				  	(self.gameboard[6] === 2 && self.gameboard[7] === 2 && self.gameboard[8]) ||
-				  	(self.gameboard[0] === 2 && self.gameboard[3] === 2 && self.gameboard[6]) ||
-				  	(self.gameboard[1] === 2 && self.gameboard[4] === 2 && self.gameboard[7]) ||
-				  	(self.gameboard[2] === 2 && self.gameboard[5] === 2 && self.gameboard[8]) ||
-				  	(self.gameboard[0] === 2 && self.gameboard[4] === 2 && self.gameboard[8]) ||
-				  	(self.gameboard[2] === 2 && self.gameboard[4] === 2 && self.gameboard[6])) {
+				 	self.playerX = 1;
 
-				  		alert("Player X you won!");
+				 	self.playerO = 2;
 
-				  	} else if ((self.gameboard[0] === 1 && self.gameboard[1] === 1 && self.gameboard[2]) ||
-				  	  (self.gameboard[3] === 1 && self.gameboard[4] === 1 && self.gameboard[5]) ||
-				  	(self.gameboard[6] === 1 && self.gameboard[7] === 1 && self.gameboard[8]) ||
-				  	(self.gameboard[0] === 1 && self.gameboard[3] === 1 && self.gameboard[6]) ||
-				  	(self.gameboard[1] === 1 && self.gameboard[4] === 1 && self.gameboard[7]) ||
-				  	(self.gameboard[2] === 1 && self.gameboard[5] === 1 && self.gameboard[8]) ||
-				  	(self.gameboard[0] === 1 && self.gameboard[4] === 1 && self.gameboard[8]) ||
-				  	(self.gameboard[2] === 1 && self.gameboard[4] === 1 && self.gameboard[6])) {
+				 	
 
-				  		alert("Player O you won!");
+				 	
+                          // rows
+				  	if((self.gameboard[0] === self.playerX && self.gameboard[1] === self.playerX && self.gameboard[2] === self.playerX) ||
+				  	  (self.gameboard[3] === self.playerX && self.gameboard[4] === self.playerX && self.gameboard[5] === self.playerX) ||
+				  	  (self.gameboard[6] === self.playerX && self.gameboard[7] === self.playerX && self.gameboard[8] === self.playerX) ||
+				  		//collumns
+				  		 
+				  	(self.gameboard[0] === self.playerX && self.gameboard[3] === self.playerX && self.gameboard[6] === self.playerX) ||
+				  	(self.gameboard[1] === self.playerX && self.gameboard[4] === self.playerX && self.gameboard[7] === self.playerX) ||
+				  	(self.gameboard[2] === self.playerX && self.gameboard[5] === self.playerX && self.gameboard[8] === self.playerX) ||
+				  		//diagnols
+				  		
+				  	(self.gameboard[0] === self.playerX && self.gameboard[4] === self.playerX && self.gameboard[8] === self.playerX) ||
+				  	(self.gameboard[2] === self.playerX && self.gameboard[4] === self.playerX && self.gameboard[6] === self.playerX)) {
+						console.log(self.count);
+						 
+				  		 self.xwin = [{ messagex: 'Player X you won!' }];
+				  		 
 
-				  	}
+		    } else if((self.gameboard[0] === self.playerO && self.gameboard[1] === self.playerO && self.gameboard[2] === self.playerO) ||
+				  	  (self.gameboard[3] === self.playerO && self.gameboard[4] === self.playerO && self.gameboard[5] === self.playerO) ||
+				  	(self.gameboard[6] === self.playerO && self.gameboard[7] === self.playerO && self.gameboard[8] === self.playerO) ||
 
+				  	(self.gameboard[0] === self.playerO && self.gameboard[3] === self.playerO && self.gameboard[6] === self.playerO) ||
+				  	(self.gameboard[1] === self.playerO && self.gameboard[4] === self.playerO && self.gameboard[7] === self.playerO) ||
+				  	(self.gameboard[2] === self.playerO && self.gameboard[5] === self.playerO && self.gameboard[8] === self.playerO) ||
+
+				  	(self.gameboard[0] === self.playerO && self.gameboard[4] === self.playerO && self.gameboard[8] === self.playerO) ||
+				  	(self.gameboard[2] === self.playerO && self.gameboard[4] === self.playerO && self.gameboard[6] === self.playerO)) {
+
+
+		    	        
+
+				  		self.owin = [{ messageo: 'Player O you won!' }];
+
+				  	 } else if(self.count == 8) 
+				  	 {
+
+				  		self.tie = [{messagetie: 'tie game!' }];
+				  	  }
+
+
+				  	 console.log("winning");
 
 
 				//   		self.gameboard == 9) { 
@@ -118,6 +161,8 @@ function GameBoardFactory($firebase){
 				 // }
 				  	}
 
+		  
+
 		 	// else (self.firstTurn += 1)  }
 
 
@@ -127,11 +172,26 @@ function GameBoardFactory($firebase){
 
          }
 
+     //       	function messageFunction() {
+
+
+		  	// 	if (self.gameboard != (playerX || playerO)){
+
+
+		  	// 		alert("tie game!");
+		  	// 	}
+
+
+
+		  	// }
+
 	
 		function getTileState(num) {
 
 				//if its zero then return selected or unseleceted ng-class
 
+				console.log()
+ 				console.log(TILE_STATES[self.gameboard[num]]);
 				return TILE_STATES[self.gameboard[num]];
 
 
