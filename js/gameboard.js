@@ -40,7 +40,7 @@ function GameBoardFactory($firebase){
 		 self.gameboard = [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
 		 
 
-		 self.firstTurn = true;
+		 self.firstTurn = ['','','','','','','','',''];
 
 		 self.getTileState = getTileState;
 
@@ -64,7 +64,8 @@ function GameBoardFactory($firebase){
 
 				if( self.gameboard[num] === 0){
 
-					//self.gameboard[num] =  TILE_STATES.length;
+					console.log(self.gameboard[num] + "gameboard num");
+					self.gameboard[num] = (self.gameboard[num] + 1) + TILE_STATES.length;
 					if( self.firstTurn ) { 
 						console.log("first turn at if :" + self.firstTurn);
 						
@@ -90,7 +91,8 @@ function GameBoardFactory($firebase){
 				    self.firstTurn = !self.firstTurn;
 				    console.log(self.count);
                     self.count++;
-				    return winningCombos(); 
+				    return winningCombos();
+				     
 				    // return messageFunction(); 
 				}
 
@@ -148,22 +150,12 @@ function GameBoardFactory($firebase){
 				  	 console.log("winning");
 
 
-				//   		self.gameboard == 9) { 
-
-
-				//   		self.firstTurn();
-
-				  	 
-
-				 		
-				// else if(self.gameboard == 9) { self.firstTurn(); } 
-
-				 // }
+			
 				  	}
 
 		  
 
-		 	// else (self.firstTurn += 1)  }
+		 
 
 
 
@@ -172,18 +164,7 @@ function GameBoardFactory($firebase){
 
          }
 
-     //       	function messageFunction() {
-
-
-		  	// 	if (self.gameboard != (playerX || playerO)){
-
-
-		  	// 		alert("tie game!");
-		  	// 	}
-
-
-
-		  	// }
+     
 
 	
 		function getTileState(num) {

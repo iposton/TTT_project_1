@@ -62,7 +62,7 @@ number of tiles: {{ game.activeBoard.numTiles }} -->
 	</p>
 	<p>Player X Go!</p>
 
-		<p>{{ game }}</p>
+		<span><p>{{ game }}</p><p>{{game.self.firstTurn}}</p></span>
 		<div class="board-tile" ng-click="game.activeBoard.toggleTile($index)" ng-repeat="tile in game.activeBoard.gameboard track by $index " ng-class="game.activeBoard.getTileState($index)">
 
 			 
@@ -75,6 +75,8 @@ number of tiles: {{ game.activeBoard.numTiles }} -->
     <div class="message-tie" ng-repeat="t in game.activeBoard.tie">
 	<span> {{ t.messagetie }} </span>
     </div>
+
+
 			
 
 		</div>
