@@ -11,11 +11,24 @@
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<![endif]-->
-
+<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/style.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<style>
+#newBackground {
+
+
+	background-image:url(newscenery.jpg);
+	color: white;
+	font-family: 'Ostrich';
+}
+
+
+		</style>
 		
-			<script src="js/angular.js"></script>
+		<script src="js/angular.js"></script>
 
 		<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
 		<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
@@ -25,57 +38,61 @@
 		
 		
 		<script src="js/tttController.js"></script>
+
+
 		
 	</head>
 
-	<body>
+	<body ng-class="bodyStyle" id="newBackgroun" >
 
-	
+		
+
+	    <!--  <p><button ng-class="bodyClass='#newBackground'"  class="btn btn-primary">Change Scenery</button></p>  -->
+	      
+
           <section id="active-board" ng-controller="TicTacToeController as game">
 
-          	<p><input type="text" ng-model="player"></p>
+          	   <p><input type="text" ng-model="player" placeholder="Name:"></p>
 
-	         <div class="game-board">
+	           <div class="game-board">
 
 		   			<span> Score: </span><span> Player X: 0 </span> <span> Player O: 0 </span>
 
 						<h1>Ding Dang Dong</h1>
 
 	                      
-	                            <div ng-click="game.activeBoard.toggleTile($index)" ng-repeat="p in game.activeBoard.xplay" ng-class="game.activeBoard.getTileState($index)">
-	                             <p>Player {{ player }} Go!</p>
+	                            <div ng-click="game.activeBoard.tiles.toggleTile($index)" ng-repeat="p in game.activeBoard.xplay" ng-class="game.activeBoard.getTileState($index)">
+
+	                                <h3>Player {{ player }} Go!</h3>
 
 	                             </div>
 
-		<!-- <span><p>{{ game }}</p><p>{{game.self.firstTurn}}</p></span> -->
-		<div class="board-tile" ng-click="game.activeBoard.toggleTile($index)" ng-repeat="tile in game.activeBoard.gameboard track by $index " ng-class="game.activeBoard.getTileState($index)">
+		                         <!-- <span><p>{{ game }}</p><p>{{game.self.firstTurn}}</p></span> -->
 
-			
-<div class="message-win" ng-repeat="x in game.activeBoard.xwin">
-	<span> {{ x.messagex }} </span>
-    </div>
-    <div class="message-wino" ng-repeat="o in game.activeBoard.owin">
-	<span> {{ o.messageo }} </span>
-    </div>
-    <div class="message-tie" ng-repeat="t in game.activeBoard.tie">
-	<span> {{ t.messagetie }} </span>
-    </div>
+								<div class="board-tile" ng-click="game.activeBoard.toggleTile($index)" ng-repeat="tile in game.activeBoard.gameboard track by $index " ng-class="game.activeBoard.getTileState($index)">
+									
 
+								</div>
 
-			
+                              <!-- Game result messages post at bottom of app -->
+							    <div class="alert alert-success" ng-repeat="x in game.activeBoard.xwin">
+								   <h3>{{ x.messagex }}</h3>
+							    </div>
 
-		</div>
+							    <div class="alert alert-warning" ng-repeat="o in game.activeBoard.owin">
+								   <h3>{{ o.messageo }}</h3> 
+							    </div>
 
-		
+							    <div class="alert alert-danger" ng-repeat="t in game.activeBoard.tie">
+								   <h3>{{ t.messagetie }}</h3>
+							    </div>
 
-
-
-	</div>
+                </div> <!-- end of board -->
 
 	
 		
 
-	<p><a href="index.html"><button>Refresh</button></a></p>
+	                            <div><a href="index.html"><button class="btn-lg btn-default">Refresh</button></a></div>
 
 
 

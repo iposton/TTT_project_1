@@ -1,3 +1,5 @@
+/* Micha's cool font */
+
 @font-face {
     font-family: 'Ostrich';
     src: url('ostrich-sans-inline-regular.eot');
@@ -12,6 +14,7 @@ body {
 
 	background:url(../images/background.jpeg);
 	background-size: cover;
+	font-family: 'Ostrich';
 	
 
 }
@@ -48,7 +51,7 @@ h1 {
 
 .board-tile.player_X {
 
-	/*background: #9b59b6;*/
+	
 	background-image:url("../images/x.png");
 }
 
@@ -59,9 +62,9 @@ h1 {
 	
 }
 
-.board-tile.player_O{
+.board-tile.player_O {
 
-	/*background: #16a085;*/
+	
 	background-image:url("../images/o.png");
 }
 
@@ -69,19 +72,18 @@ h1 {
 
 
 
-width: 400px;
-height: 800px;
-margin: 0 auto;
-/*background: white;*/
-  text-shadow: 1px 1px 2px #333;
-   background-color: rgba(0,0,0,.3);
+		width: 400px;
+		height: 600px;
+		margin: 0 auto;
+
+		text-shadow: 1px 1px 2px #333;
+		background-color: rgba(0,0,0,.3);
 
 
 }
 
 
-
-.message-win{ 
+.message-win { 
 
          		color: red;
          		margin: auto;
