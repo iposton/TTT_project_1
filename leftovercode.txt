@@ -154,3 +154,19 @@
 			// this.tiles[i] = 0;
 
 		 // }
+
+		 	<!-- <section id="lobby" ng-controller="TicTacToeFactory as fire">
+
+		 <button ng-click="fire.room.playerTurn = (fire.room.playerTurn + 1) % 2; fire.room.$save();" ng-show="fire.playerNumber === fire.room.playerTurn"  ng-class="fire.room.getLobby($index)">Players Turn</button>
+            {{ fire.room.name }}
+
+              player number: {{ fire.room.playerNumber}}
+
+       Number of Players:  {{ fire.room.numPlayers }}
+
+       </section> -->
+<!-- 
+{{game.gameName}} -
+number of tiles: {{ game.activeBoard.numTiles }} -->
+
+<!-- <h1>{{ game.activeBoard.tiles }}</h1> -->

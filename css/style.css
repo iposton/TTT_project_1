@@ -1,15 +1,32 @@
+@font-face {
+    font-family: 'Ostrich';
+    src: url('ostrich-sans-inline-regular.eot');
+    src: url('ostrich-sans-inline-regular.eot?#iefix') format('embedded-opentype'),
+         url('ostrich-sans-inline-regular.woff') format('woff'),
+         url('ostrich-sans-inline-regular.ttf') format('truetype'),
+         url('ostrich-sans-inline-regular.svg') format('svg');
+    font-weight: normal;     
+}
+
 body {
 
 	background:url(../images/background.jpeg);
 	background-size: cover;
-	background-position: center;
+	
+
+}
+
+h1 {
+     font-family: 'Ostrich';
+     font-weight: normal;
+	 font-size: 80px;
 
 }
 
 #active-board {
 
 	text-align: center;
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 #active-board button {
@@ -53,7 +70,7 @@ body {
 
 
 width: 400px;
-height: 600px;
+height: 800px;
 margin: 0 auto;
 /*background: white;*/
   text-shadow: 1px 1px 2px #333;
@@ -62,11 +79,7 @@ margin: 0 auto;
 
 }
 
-#lobby {
 
-	width: 400px;
-	height: 40px;
-}
 
 .message-win{ 
 

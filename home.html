@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html ng-app="tttApp">
+	<head>
+		<meta charset="utf-8">
+
+<!-- Make the board change and say Ding, Dang, Dong Merry Christmas -->
+
+		<title>Tic, Tac, Toe</title>
+
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+			<script src="js/angular.js"></script>
+
+		<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+	
+		<script src="js/app.js"></script>
+		<script src="js/gameboard.js"></script>
+		
+		
+		<script src="js/tttController.js"></script>
+		
+	</head>
+
+	<body>
+
+	
+          <section id="active-board" ng-controller="TicTacToeController as game">
+
+          	<p><input type="text" ng-model="player"></p>
+
+	         <div class="game-board">
+
+		   			<span> Score: </span><span> Player X: 0 </span> <span> Player O: 0 </span>
+
+						<h1>Ding Dang Dong</h1>
+
+	                      
+	                            <div ng-click="game.activeBoard.toggleTile($index)" ng-repeat="p in game.activeBoard.xplay" ng-class="game.activeBoard.getTileState($index)">
+	                             <p>Player {{ player }} Go!</p>
+
+	                             </div>
+
+		<!-- <span><p>{{ game }}</p><p>{{game.self.firstTurn}}</p></span> -->
+		<div class="board-tile" ng-click="game.activeBoard.toggleTile($index)" ng-repeat="tile in game.activeBoard.gameboard track by $index " ng-class="game.activeBoard.getTileState($index)">
+
+			
+<div class="message-win" ng-repeat="x in game.activeBoard.xwin">
+	<span> {{ x.messagex }} </span>
+    </div>
+    <div class="message-wino" ng-repeat="o in game.activeBoard.owin">
+	<span> {{ o.messageo }} </span>
+    </div>
+    <div class="message-tie" ng-repeat="t in game.activeBoard.tie">
+	<span> {{ t.messagetie }} </span>
+    </div>
+
+
+			
+
+		</div>
+
+		
+
+
+
+	</div>
+
+	
+		
+
+	<p><a href="index.html"><button>Refresh</button></a></p>
+
+
+
+	
+	
+
+
+</section>
+
+	</body>
+</html>

@@ -31,6 +31,21 @@ function GameBoardFactory($firebase){
 
 		 self.numTiles = numTiles;
 
+
+
+
+		     var sync = new Firebase("https://playercount.firebaseio.com/gameboard");
+		     var tiles = $firebase(sync).$asArray();
+		     
+		     
+		     
+
+		     for(var i = 0; i < self.numTiles; i++){
+		     	tiles.$add(
+		     		[i]  
+		     	);
+		     }
+
 		 // this.tiles = new Array( numTiles );
 
 		  // this.tiles = tiles;
@@ -40,18 +55,24 @@ function GameBoardFactory($firebase){
 		 self.gameboard = [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
 		 
 
-		 self.firstTurn = ['','','','','','','','',''];
+		 self.firstTurn = true;
 
 		 self.getTileState = getTileState;
 
-		 
+		 self.xplay = [{ playerx: 'X' }];
 
-		 // self.owin = owin;
+		 self.count = 0;
 
-	     // self.messageFunction = messageFunction;
+		 function countArray() {
 
-	     // self.winningCombos = winningCombos;
+            console.log(self.count);
+		 	if( self.count < self.gameboard.length ) { self.count++; self.tiles.$add();
+		 } else { self.count = 0; }
 
+		}
+
+         
+		
 			      
 
 
@@ -59,7 +80,7 @@ function GameBoardFactory($firebase){
 
 			//this does this devidied by this and sets it back to zero ng-click
 				console.log("inside toggleTile");
-
+				
 				
 
 				if( self.gameboard[num] === 0){
@@ -68,20 +89,24 @@ function GameBoardFactory($firebase){
 					self.gameboard[num] = (self.gameboard[num] + 1) + TILE_STATES.length;
 					if( self.firstTurn ) { 
 						console.log("first turn at if :" + self.firstTurn);
-						
+						 
+						  self.oplay = [{ playero: 'O' }];
 						//  player X
 						self.gameboard[num] = 1;
-						
+						self.count++;
 						
 
 					}
 					else {
 						console.log("else should be false :" + self.firstTurn);
 						
-
+						  
 						// player O
+						
 
 						self.gameboard[num] = 2;
+						self.count++;
+						
 						
 						
 
@@ -89,19 +114,29 @@ function GameBoardFactory($firebase){
 				        }
 
 				    self.firstTurn = !self.firstTurn;
-				    console.log(self.count);
-                    self.count++;
-				    return winningCombos();
-				     
+				   
+				 
+
+		
+                    
+				     return winningCombos();
+		
+
+
 				    // return messageFunction(); 
 				}
 
-				 function winningCombos() {  
+				 function winningCombos() { 
+
+
 				 	 
 
 				 	self.playerX = 1;
 
 				 	self.playerO = 2;
+
+				 	
+					
 
 				 	
 
@@ -123,6 +158,10 @@ function GameBoardFactory($firebase){
 						 
 				  		 self.xwin = [{ messagex: 'Player X you won!' }];
 				  		 
+				  		 
+				  		 
+				  		 
+				  		 
 
 		    } else if((self.gameboard[0] === self.playerO && self.gameboard[1] === self.playerO && self.gameboard[2] === self.playerO) ||
 				  	  (self.gameboard[3] === self.playerO && self.gameboard[4] === self.playerO && self.gameboard[5] === self.playerO) ||
@@ -139,30 +178,36 @@ function GameBoardFactory($firebase){
 		    	        
 
 				  		self.owin = [{ messageo: 'Player O you won!' }];
+				  		
+				  		
+				  		
 
-				  	 } else if(self.count == 8) 
-				  	 {
+				  	  } else if(self.count==9) {
 
-				  		self.tie = [{messagetie: 'tie game!' }];
+				  		 self.tie = [{messagetie: 'tie game!' }];
+				  		 gameOver();
+				  		 return;
+				  		
 				  	  }
+				  	  
 
 
-				  	 console.log("winning");
+				  	 //  setTimeout( 1000 );
+
+
+				  	 // console.log("winning");
 
 
 			
-				  	}
-
-		  
-
+				  	}   //winningCombos function
 		 
 
 
-
+          }
 		      
 
 
-         }
+         
 
      
 
@@ -181,10 +226,53 @@ function GameBoardFactory($firebase){
 			
 		}
 
+
+
+		// 	for (var i=0; i<self.firstTurn.length; i++) {
+		// 	self.firstTurn[i] = 0;
+
+		// }
+
 	
 	}
+
+
+	 	function gameOver(){
+
+				  		self.gameover = gameover;
+				  		gameOver();
+				  			
+
+
+				  		if( self.count == 9) {
+
+				  			gameOver();
+				  			
+
+				  		} else if (self.gameboard == self.xwin){
+
+
+				  			gameOver();
+				  			
+				  		} else if (self.gameboard == self.owin){
+
+
+				  		    gameOver();
+				  			
+				  		}
+		     for(var i = 0; i < self.numTiles; i++){
+		     	tiles.$add(
+		     		[i]  
+		     	);
+
+		     }
+
+
+
+				  	}
 	
  	return GameBoard;
+ 	return gameOver();
 
 
   }
