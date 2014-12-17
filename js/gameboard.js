@@ -20,9 +20,9 @@ function GameBoardFactory($firebase){
 
 				    
 
-				      var sync = new Firebase("https://iandingdangdong.firebaseio.com/gameboard");
-				      sync.remove();
-			     var tiles = $firebase(sync).$asArray();
+		 var sync = new Firebase("https://iandingdangdong.firebaseio.com/gameboard");
+		 sync.remove();
+		 var tiles = $firebase(sync).$asArray();
 		     
 		     
 		     
@@ -30,8 +30,10 @@ function GameBoardFactory($firebase){
 		     for(var i = 0; i < numTiles; i++){
 		     	tiles.$add(
 		     		[i]  
-		     	);
+		     	 );
 		     }
+
+		 self.countArray = countArray;
 
 		 self.toggleTile = toggleTile;
 		
@@ -186,21 +188,11 @@ function GameBoardFactory($firebase){
         } // end of ToggleTile function
 		      
 
-
-         
-
-     
-
-	
-		function getTileState(num) {
+	 function getTileState(num) {
 
 				//if its zero then return selected or unseleceted ng-class
 
-				
-
-				
- 				
-				return TILE_STATES[self.gameboard[num]];
+		        return TILE_STATES[self.gameboard[num]];
 
 
          }
